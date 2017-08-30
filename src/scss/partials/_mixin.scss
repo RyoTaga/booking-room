@@ -1,0 +1,153 @@
+@charset "UTF-8";
+@import "variables";
+
+@mixin reset {
+    body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        line-height: 1;
+        font-size: 62.5%;
+        vertical-align: baseline;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    caption, th, td {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+
+    q, blockquote {
+        quotes: none;
+    }
+    q:before, q:after, blockquote:before, blockquote:after {
+        content: "";
+        content: none;
+    }
+
+    a img {
+        border: none;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+      display: block;
+    }
+}
+
+@mixin clearfix {
+    zoom: 1;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin inner {
+    width: 100%;
+    max-width: $pcWidth;
+    margin: 0 auto;
+}
+
+@mixin rgba-background($rgba_color){
+    @include filter-gradient($rgba_color, $rgba_color);
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
+        background: transparent;
+        // set filter as none for IE9+, because IE9+ supprot RGBa
+        :root & {
+        filter: none\0/IE9;}
+    }
+    background: $rgba_color;
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+    @if $orientation == vertical {
+        background: $end-color;
+        // vertical
+        background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+        background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+        background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+        background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+        background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-color}', endColorstr='#{$end-color}',GradientType=0 );
+    }
+    @else if $orientation == horizontal {
+        // horizontal
+        background: $start-color;
+        background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+        background: -webkit-linear-gradient(left,  $start-color 0%, $end-color 100%);
+        background: -o-linear-gradient(left,  $start-color 0%, $end-color 100%);
+        background: -ms-linear-gradient(left,  $start-color 0%, $end-color 100%);
+        background: linear-gradient(to right,  $start-color 0%, $end-color 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-color}', endColorstr='#{$end-color}',GradientType=1 );
+    }
+    @else {
+        // radial
+        background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+        background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+        background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+        background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+        background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-color}', endColorstr='#{$end-color}',GradientType=1 );
+    }
+ }
+
+ @mixin placeholderStyle($placeholderColor) {
+    &:placeholder-shown {
+        color: $placeholderColor;
+        line-height: 1.3;
+    }
+    &::-webkit-input-placeholder {
+        color: $placeholderColor;
+        line-height: 1.3;
+    }
+    &:-moz-placeholder {
+        color: $placeholderColor;
+        line-height: 1.3;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        color: $placeholderColor;
+        line-height: 1.3;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $placeholderColor;
+        line-height: 1.3;
+    }
+}

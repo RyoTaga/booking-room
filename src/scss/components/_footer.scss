@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.footer {
+    position: relative;
+    background: #ccc;
+    padding: 20px 0;
+    @media #{$sp} {
+        margin-bottom: 50px;
+    }
+    &-navi {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        &-list {
+            @include clearfix;
+        }
+        &-item {
+            width: 20%;
+            float: left;
+        }
+    }
+    &-copy {
+        text-align: center;
+    }
+}

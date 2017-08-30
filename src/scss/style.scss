@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import "./partials/mixin";
+@import "./partials/variables";
+@import "./partials/font-size/ptp-14";
+
+/* Base
+======================================================*/
+@include reset;
+@import "./components/base";
+
+/* Layout
+======================================================*/
+@import "./components/layout";
+
+/* Theme
+======================================================*/
+@import "./components/theme";
+
+/* Module
+======================================================*/
+@import "./components/header";
+@import "./components/gnavi";
+@import "./components/footer";

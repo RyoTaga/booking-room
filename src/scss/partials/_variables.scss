@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+//Base
+$color: #000;
+$anchor : #111;
+$activeColor : #999;
+$fontSize: 14px;
+$lineHeight : 1.5;
+$spWidth: 94%;
+$pcWidth: 1150px;
+
+//Font-Family
+$serif: Times New Roman, "游明朝","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",serif;
+$sans_serif: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"游ゴシック", YuGothic, "Yu Gothic", "ＭＳ Ｐゴシック","MS PGothic",Osaka,Arial,sans-serif;
+
+//Media Query
+$sp: "only screen and (max-width: 767px)";
+$not_sp: "only screen and (min-width: 768px)";
+$tab: "only screen and (min-width: 768px) and (max-width: 1150px)";
+$not_pc: "only screen and (max-width: 1150px)";
+$pc: "only screen and (min-width: 1150px)";
+$iPhone5: "only screen and (max-width: 374px)";

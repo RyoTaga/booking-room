@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= data.sitename %><%= (page.title) ? ' | ' + page.title : '' %></title>
+  <link rel="stylesheet" href="<%= page.directory %>css/style.css">
+</head>
+<body>
+    <header class="header">
+      <div class="l-inner header-inner">
+        <h1 class="header-logo">ロゴ</h1>
+      </div>
+      <nav class="gnavi">
+        <p id="humberger" class="humberger"><span></span></p>
+        <ul class="gnavi-list">
+          <li class="gnavi-item"><a href="#">ナビ1</a></li>
+          <li class="gnavi-item"><a href="#">ナビ2</a></li>
+          <li class="gnavi-item"><a href="#">ナビ3</a></li>
+          <li class="gnavi-item"><a href="#">ナビ4</a></li>
+          <li class="gnavi-item"><a href="#">ナビ5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="l-contents <%= page.filename %>">
+      <%- include('./pages/_' + page.filename ) %>
+    </main>
+    <footer class="footer">
+      <div class="l-inner">
+        <nav class="footer-navi">
+          <ul class="footer-navi-list">
+            <li class="footer-navi-item"><a href="#">メニュー1</a></li>
+            <li class="footer-navi-item"><a href="#">メニュー2</a></li>
+            <li class="footer-navi-item"><a href="#">メニュー3</a></li>
+            <li class="footer-navi-item"><a href="#">メニュー4</a></li>
+            <li class="footer-navi-item"><a href="#">メニュー5</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copy"><small>&copy; test 2017 All Rights Reserved</small></p>
+      </div>
+    </footer>
+<script src="<%= page.directory %>js/bundle.dev.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+.l {
+    &-inner {
+        @include inner;
+        @media #{$sp} {
+            box-sizing: border-box;
+            padding: 0 6vw;
+        }
+    }
+    &-contents {
+        @include clearfix;
+        @include inner;
+        min-height: 800px;
+        padding: 10px 0 40px;
+        @media #{$sp} {
+            box-sizing: border-box;
+            padding: 0 6vw;
+        }
+    }
+}

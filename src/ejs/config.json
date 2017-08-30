@@ -1,0 +1,12 @@
+{
+  "data": {
+    "sitename": "TEST"
+  },
+  "pages": [
+    {
+      "filename": "index",
+      "title": "TOP",
+      "directory": "./"
+    }
+  ]
+}
