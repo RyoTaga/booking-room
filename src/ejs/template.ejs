@@ -40,6 +40,36 @@
         <p class="footer-copy"><small>&copy; test 2017 All Rights Reserved</small></p>
       </div>
     </footer>
-<script src="<%= page.directory %>js/bundle.dev.js"></script>
+    <div id="modal" class="modal">
+      <div id="booking">
+          <table class="table">
+            <caption class="table-caption"><span id="roomDate"></span>のご予約</caption>
+            <tbody>
+              <tr>
+                <th class="table-head">氏名</th>
+                <td class="table-field"><input type="text" id="name" class="form-items"></td>
+              </tr>
+              <tr>
+                <th class="table-head">お部屋タイプ</th>
+                <td class="table-field">
+                  <ul class="form-radio-list">
+                    <li class="form-radio-item"><input type="radio" name="type" id="roomSingle" data-value="single" checked><label for="roomSingle">シングル</label></li>
+                    <li class="form-radio-item"><input type="radio" name="type" id="roomDouble" data-value="double"><label for="roomDouble">ダブル</label></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-head">備考</th>
+                <td class="table-field"><textarea rows="10" cols="30" class="form-items" id="comment"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="form-check"><a id="checkVacancy" class="form-active">空き部屋を確認する</a></p>
+          <ul id="avalableList"></ul>
+          <p><button id="submit" class="form-submit">予約する</button></p>
+      </div>
+    </div>
+    <div id="modalOverlay" class="modal-overlay"></div>
+  <script src="<%= page.directory %>js/bundle.dev.js"></script>
 </body>
 </html>

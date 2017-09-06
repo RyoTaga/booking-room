@@ -1,0 +1,43 @@
+.form {
+  &-radio {
+    &-list {
+      @include clearfix;
+      margin-left: 20px;
+    }
+    &-item {
+      @media #{$not_sp} {
+        float: left;
+        &:first-child {
+          margin: 0 30px 0 0;
+        }
+      }
+    }
+  }
+  &-items {
+    width: 100%;
+  }
+  &-check {
+    width: 200px;
+    margin: 0 auto;
+  }
+  &-submit {
+    display: none;
+    &.is-active {
+      display: block;
+    }
+  }
+  &-active {
+    color: #fff;
+    background: #111;
+    border: 1px solid #ccc;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    @media #{$pc} {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

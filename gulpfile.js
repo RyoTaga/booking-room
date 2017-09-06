@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
 
 const Path = {
-  Js: 'src/js/',
+  Js: './src/js/',
   Scss: 'src/scss/',
   Ejs: 'src/ejs/',
   Img: 'src/img/',
@@ -58,7 +58,7 @@ gulp.task('img', () => {
 });
 
 gulp.task('webpack', () => {
-  gulp.src(`${Path.Js}entry.js`)
+  gulp.src(`${Path.Js}**/*.js`)
     .pipe($.plumber())
     .pipe(webpackStream(webpackConfig, webpack))
     .pipe(gulp.dest('./dist/js'))

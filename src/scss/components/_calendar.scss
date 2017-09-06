@@ -1,0 +1,32 @@
+.calendar {
+  width: 100%;
+  th, td {
+    border: 1px solid #ccc;
+    text-align: center;
+    a, span {
+      display: block;
+      transition: .3s;
+      padding: 10px 0;
+    }
+    a {
+      &:hover {
+        background: #ccc;
+        opacity: .8;
+      }
+    }
+  }
+  th {
+    padding: 10px 0; 
+    &:first-child {
+      background: rgba(255, 0, 0, .4);
+    }
+    &:last-child {
+      background: rgba(0, 0, 255, .4);
+    }
+  }
+  &-title{
+    font-size: $px20;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}

@@ -28,6 +28,7 @@ img {
 input {
     &[type=text],
     &[type=password],
+    &[type=date],
     &[type=email],
     &[type=tel],
     &[type=zip] {
@@ -36,10 +37,25 @@ input {
         border-radius: 0;
         border: 1px solid #ccc;
         padding: 5px;
-        margin-bottom: 10px;
         max-width: 100%;
         box-sizing: border-box;
         font-size: 16px;
+    }
+    &[type=date] {
+        font-size: 12px;
+    }
+    &[type=submit] {
+        width: 100%;
+        appearance: none;
+        border-radius: 5px;
+        padding: 5px;
+        transition: opacity .3s;
+        cursor: pointer;
+        @media #{$pc} {
+            &:hover {
+                opacity: .8;
+            }
+        }
     }
     &[type=checkbox] {
         cursor: pointer;
@@ -84,56 +100,55 @@ input {
         //     }
         // }
     }
-    // &[type=radio] {
-    //     appearance: none;
-    //     display: none;
-    //     border: none;
-    //     vertical-align: middle;
-    //     margin: 0;
-    //     & + label {
-    //         position: relative;
-    //         display: inline-block;
-    //         cursor: pointer;
-    //         &:before {
-    //             content: "";
-    //             display: block;
-    //             width: 12px;
-    //             height: 12px;
-    //             border: 1px solid #cacaca;
-    //             background: #fff;
-    //             border-radius: 50%;
-    //             position: absolute;
-    //             top: 50%;
-    //             left: -20px;
-    //             transform: translateY(-50%);
-    //         }
-    //         &:after {
-    //             content: "";
-    //             display: block;
-    //             width: 6px;
-    //             height: 6px;
-    //             background: #000;
-    //             border-radius: 50%;
-    //             position: absolute;
-    //             top: 50%;
-    //             left: -16px;
-    //             transition: .2s;
-    //             transform: translateY(-50%);
-    //             opacity: 0;
-    //         }
-    //     }
-    //     &:checked + label {
-    //         &:after {
-    //             opacity: 1;
-    //         }
-    //     }
-    // }
+    &[type=radio] {
+        appearance: none;
+        display: none;
+        border: none;
+        vertical-align: middle;
+        margin: 0;
+        & + label {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            &:before {
+                content: "";
+                display: block;
+                width: 12px;
+                height: 12px;
+                border: 1px solid #cacaca;
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: -20px;
+                transform: translateY(-50%);
+            }
+            &:after {
+                content: "";
+                display: block;
+                width: 6px;
+                height: 6px;
+                background: #000;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: -16px;
+                transition: .2s;
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+        }
+        &:checked + label {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
 }
 textarea {
     padding: 5px;
     border: 1px solid #ccc;
     background: #fff;
-    margin-bottom: 10px;
     box-sizing: border-box;
     font-size: 16px;
 }
